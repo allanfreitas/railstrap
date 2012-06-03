@@ -17,7 +17,8 @@ Gem::Specification.new do |s|
   s.test_files = Dir["test/**/*"]
 
   s.add_dependency "rails", "~> 3.2.3"
-  s.add_dependency "bootstrap-sass", "~> 2.0.3"
+  #s.add_dependency "bootstrap-sass", "~> 2.0.3"
+  s.add_dependency "bootstrap-sass", ">= 2.0.3"
   
   #helpers para Tabelas
   s.add_dependency "table_for_collection", ">= 1.0.6"

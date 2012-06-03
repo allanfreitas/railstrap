@@ -1,0 +1,12 @@
+
+<%%= tb_fixed_toolbar("<%= plural_model_name.humanize %>", <%= plural_resource_name %>_path) do %>
+  <%%= tb_submit_button_to @<%= resource_name  %>%>
+  <%%= tb_cancel_button_to @<%= resource_name %> %>
+<%% end %>
+
+
+<%%= simple_form_for @<%= resource_name %>,:html => { :class => 'form-vertical' } do |f| %>
+  
+  <%%= render :partial=>'form', :locals=>{:f=>f} %>
+
+<%%end%>

@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SageWeb - Floranativa Administração do Site</title>
+      <!--<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>-->
+  <!--[if lt IE 9]>
+    <%#= javascript_include_tag "html5" %>
+  <![endif]-->
+  <%= stylesheet_link_tag    "admin", :media => "all" %>
+  <%= javascript_include_tag "admin" %>
+    <style type="text/css">
+      body {
+      /  padding-top: 60px;
+        padding-bottom: 10px;
+      }
+      .sidebar-nav {
+        padding: 9px 0;
+      }
+    </style>
+  <%= csrf_meta_tags %>
+<!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+
+</head>
+<body data-offset="50">
+
+<!--[inicio] barra_fixa -->
+<div class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
+    <div class="container">
+
+      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </a>
+      <a class="brand" href="<%=painel_root_url%>">
+        <span style="color:#ffe62f">Sage</span><span style="color:#fff">Web</span>
+        <sup><span class="label label-warning">beta</span></sup>
+      </a>
+      <div class="nav-collapse">
+<!--        <ul class="nav">
+
+          <li class="active"><a href="<%=root_url%>">Ir ao site</a></li>
+          <!- -<li class="divider-vertical"></li>- ->
+        </ul>
+-->
+        <% if cliente_signed_in? %>
+        <ul class="nav pull-right">
+
+          <li class="active"><a href="<%=root_url%>">Ir ao site</a></li>
+          <!--<li class="divider-vertical"></li>-->
+          <li class="dropdown">
+                <a data-toggle="dropdown" class="dropdown-toggle " href="#"><%=current_cliente.nome%> <b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="#"><i class="icon-user"></i> Meus dados  </a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="icon-lock"></i> Alterar Senha</a>
+                  </li>
+                  <li class="divider"></li>
+                  <li>
+                    <%= link_to (raw('<i class="icon-off"></i> Sair'), destroy_cliente_session_path, 
+        :method => :delete, :style => 'font-weight:bold') %>
+                  </li>
+                </ul>
+              </li>
+        </ul>
+          
+        <!--<p class="navbar-text pull-right painel_logado active">Logado como 
+          <a style='margin-right:10px;' href="#"><i class="icon-white icon-user"></i> <%=current_cliente.nome%></a> 
+        </p>-->
+        <%end%>
+      </div><!--/.nav-collapse -->
+    </div>
+  </div>
+</div>
+<!--[fim] barra_fixa -->
+
+
+<!--[inicio] wrap -->
+<div id="listaguarapari">
+
+<div class="container">
+
+<header id="header">
+  <div class="row">
+   <div class="span8"><!-- --></div>
+   <div class="span4"><!-- --></div>   
+  </div>
+<br /><br />
+</header>
+
+<section id="global_container"> 
+  <div class="row">
+    <div class="span2">
+      <div class="well sidebar-nav">
+        <ul class="nav nav-list">
+          <li class="active"><a href="<%=painel_root_url%>">Inicio</a></li>
+          <li class="nav-header">Cadastros</li>
+          <li><a href="<%=painel_clientes_path%>">Clientes</a></li>
+          <li><a href="<%=painel_galerias_path%>">Galerias</a></li>
+          <li><a href="<%=painel_servicos_path%>">Serviços</a></li>
+          <li><a href="<%=painel_paginas_path%>">Páginas</a></li>
+          <li class="nav-header">Configurações</li>
+          <li><a href="<%=painel_sliders_path%>">Slider</a></li>
+            <!-- DIVISOR -->
+          <li class="divider"></li>
+          <li><a href="<%=painel_contatos_path%>">Contatos via Site</a></li>
+        </ul>
+      </div><!--/.well -->
+    </div>
+
+<div class="span10">
+<%= yield %>
+</div>
+
+  </div>
+</section>
+
+
+<footer class="footer container">
+  <hr>
+    <p class="pull-right"><a href="#">Voltar ao Topo</a></p>
+    <p><%=link_to 'FloraNativa Trancoso', root_url %> <%=Time.now.year%>. Todos os direitos reservados.</p>
+    <p>Desenvolvido e mantido por <a href="http://www.allanfreitas.com.br">@allanfreitas</a>.</p>
+    <p>Licença <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+</footer>
+
+</div><!--[fim] container -->
+
+</div><!--[fim] listaguarapari -->
+
+
+
+</body>
+</html>

@@ -1,0 +1,18 @@
+<%% if f.error_notification %>
+<div class="alert alert-error fade in">
+  <a class="close" data-dismiss="alert" href="#">&times;</a>
+  <%%= f.error_notification %>
+</div>
+<%% end %>
+
+
+<% columns.each do |column| %>
+  <%%= f.input :<%= column.name %>, :input_html => { :readonly => @readonly, :disabled=>@readonly } %>
+<% end %>
+
+  <%='<!--
+  <div class="form-actions">'%>
+    <%%= f.button :submit, :class => 'btn-primary' %>
+    <%%= submit_tag 'Cancel', :type => :reset, :class => "btn btn-danger" %>
+  <%='</div>
+  -->'%>

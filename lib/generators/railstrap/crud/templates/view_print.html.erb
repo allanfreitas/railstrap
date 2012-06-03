@@ -1,0 +1,13 @@
+<%%=flexa_flash_message%>
+
+
+<%%= semantic_form_for @<%= plural_resource_name %> do |f| %>
+
+  <%%= render :partial=>'form', :locals=>{:f=>f} %>
+
+  <%%= flexa_fixed_toolbar "<%= plural_model_name.humanize %>", <%= plural_resource_name %>_path do %>
+    <%%= flexa_submit_button "Imprimir" %>
+    <%%= flexa_cancel_button_to @<%= resource_name %> %>
+  <%%end%>
+
+<%% end %>
