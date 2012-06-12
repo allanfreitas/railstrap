@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>RailsTrap - <%=options.app_name%></title>
+  <title>RailsTrap - Railstrap Painel</title>
       <!--<script src="http://html5shim.googlecode.com/svn/trunk/html5.js" type="text/javascript"></script>-->
   <!--[if lt IE 9]>
-    <%#= javascript_include_tag "html5" %>
+    
   <![endif]-->
-  <%%= stylesheet_link_tag    "railstrap_painel", :media => "all" %>
-  <%%= javascript_include_tag "railstrap_painel" %>
+  <%= stylesheet_link_tag    "railstrap_painel", :media => "all" %>
+  <%= javascript_include_tag "railstrap_painel" %>
     <style type="text/css">
       body {
       /  padding-top: 60px;
@@ -17,7 +17,7 @@
         padding: 9px 0;
       }
     </style>
-  <%%= csrf_meta_tags %>
+  <%= csrf_meta_tags %>
 <!--  <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
 </head>
@@ -44,7 +44,7 @@
           <!- -<li class="divider-vertical"></li>- ->
         </ul>
 -->
-        <%# if cliente_signed_in? %>
+        
         <ul class="nav pull-right">
 
           <li class="active"><a href="#">Ir ao site</a></li>
@@ -60,7 +60,7 @@
                   </li>
                   <li class="divider"></li>
                   <li>
-                    <%%= link_to (raw('<i class="icon-off"></i> Logout'), '#', 
+                    <%= link_to (raw('<i class="icon-off"></i> Logout'), '#', 
         :method => :delete, :style => 'font-weight:bold') %>
                   </li>
                 </ul>
@@ -70,7 +70,7 @@
         <!--<p class="navbar-text pull-right painel_logado active">Logado como 
           <a style='margin-right:10px;' href="#"><i class="icon-white icon-user"></i> #UserLoggedIN</a> 
         </p>-->
-        <%#end%>
+        
       </div><!--/.nav-collapse -->
     </div>
   </div>
@@ -112,7 +112,7 @@
     </div>
 
 <div class="span10">
-<%%= yield %>
+<%= yield %>
 </div>
 
   </div>
@@ -122,7 +122,7 @@
 <footer class="footer container">
   <hr>
     <p class="pull-right"><a href="#">Voltar ao Topo</a></p>
-    <p><%%=link_to 'Railstrap', 'http://github.com/allanfreitas/railstrap' %> <%%=Time.now.year%>. Todos os direitos reservados.</p>
+    <p><%=link_to 'Railstrap', 'http://github.com/allanfreitas/railstrap' %> <%=Time.now.year%>. Todos os direitos reservados.</p>
     <p>Desenvolvido e mantido por <a href="http://www.allanfreitas.com.br">@allanfreitas</a>.</p>
     <p>Licença <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
 </footer>

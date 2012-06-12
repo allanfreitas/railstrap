@@ -2,7 +2,7 @@ Description:
     Explain the generator
 
 Example:
-    rails generate sage_crud Thing
+    rails generate railstrap:crud 
 
     This will create:
         what/will/it/create

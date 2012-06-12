@@ -19,6 +19,20 @@ You can run bundle from command line
 
     bundle install
 
+
+## Usage:
+  rails generate railstrap:layout [LAYOUT_NAME] [options]
+
+### Options:
+  [--no-assets]                # Use this option if you want to generate only the Layout File
+  [--layout-type=LAYOUT_TYPE]  # Layout type, admin or sign
+                               # Default: admin
+  [--app-name=APP_NAME]        # Specify the application name
+                               # Default: Railstrap Painel
+  [--no-layout]                # Use this option if you want to generate only stylesheets
+
+
+
 ## Features
 <ul>
   <li>Scaffold Gererator on Bootstrap Style</li>

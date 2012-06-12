@@ -1,0 +1,12 @@
+<%= tb_fixed_toolbar("Authors", painel_authors_path) do %>
+  <%= tb_add_button_to Author %>
+  <%=tb_search_tool Author %>
+  <%= paginate @authors %>
+<% end %>
+
+<%= tb_table_for @authors, :actions=>[:show,:edit,:delete] do -%>
+  <% column :name, :title=>"Name" %> 
+  <% column :status, :title=>"Status" %> 
+  
+<%end%>
+<%= paginate @authors %>

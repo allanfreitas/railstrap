@@ -1,0 +1,12 @@
+
+<%= tb_fixed_toolbar("Authors", authors_path) do %>
+  <%= tb_submit_button_to @author%>
+  <%= tb_cancel_button_to @author %>
+  <%= tb_delete_button_to @author %>
+<% end %>
+
+<%= simple_form_for @author,:html => { :class => 'form-vertical' } do |f| %>
+  
+  <%= render :partial=>'form', :locals=>{:f=>f} %>
+
+<%end%>
