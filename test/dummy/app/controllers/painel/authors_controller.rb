@@ -4,7 +4,6 @@ class Painel::AuthorsController < ApplicationController
   # GET /painel/authors.json
   def index
     @authors = Author.tb_search(:search => {:text => params[:search],:fields => ['id']}, :page => params[:page])
-    #@authors = Author.all
 
     respond_to do |format|
       format.html # index.html.erb

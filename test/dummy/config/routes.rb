@@ -1,5 +1,7 @@
 Dummy::Application.routes.draw do
 
+  #resources :authors
+
   namespace :painel do
     resources :authors
   end

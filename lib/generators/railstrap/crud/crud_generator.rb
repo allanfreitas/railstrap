@@ -57,6 +57,11 @@ module Railstrap
       @controller_routing_path = @controller_file_path.gsub(/\//, '_')
       @model_name = @base_name.singularize unless @model_name
       @model_name = @model_name.camelize
+
+      #p "#################################"
+      #p extract_modules(name)
+      #p "#################################"
+      #abort("PAREI")
     end
     
     def controller_routing_path
@@ -81,6 +86,15 @@ module Railstrap
     
     def plural_resource_name
       resource_name.pluralize
+    end
+
+    #
+    def namespace_path
+      if @controller_class_nesting_depth == 0
+        ''
+      else
+        @controller_class_nesting.downcase+'_'
+      end
     end
     
     ## 
