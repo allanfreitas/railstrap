@@ -77,7 +77,7 @@ class Painel::AuthorsController < ApplicationController
     @author.destroy
 
     respond_to do |format|
-      format.html { redirect_to painel_authors_index_url }
+      format.html { redirect_to painel_authors_url }
       format.json { head :ok }
     end
   end

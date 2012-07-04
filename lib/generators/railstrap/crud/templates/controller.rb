@@ -101,7 +101,7 @@ class <%= controller_class_name %>Controller < ApplicationController
     @<%= tbl_nome%>.destroy
 
     respond_to do |format|
-      format.html { redirect_to <%= index_helper %>_url }
+      format.html { redirect_to <%=namespace_path%><%=ptbl_nome%>_url }
       format.json { head :ok }
     end
   end
