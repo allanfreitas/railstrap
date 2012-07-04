@@ -5,7 +5,7 @@
 <%% end %>
 
 
-<%%= simple_form_for @<%= resource_name %>,:html => { :class => 'form-vertical' } do |f| %>
+<%%= simple_form_for @<%= resource_name %>, :url => <%= namespace_path %><%= plural_resource_name %>_path,:html => { :class => 'form-vertical', :id => '<%= resource_name %>' } do |f| %>
   
   <%%= render :partial=>'form', :locals=>{:f=>f} %>
 

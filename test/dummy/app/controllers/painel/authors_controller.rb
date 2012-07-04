@@ -45,7 +45,7 @@ class Painel::AuthorsController < ApplicationController
 
     respond_to do |format|
       if @author.save
-        format.html { redirect_to @author, :notice => 'Author was successfully created.' }
+        format.html { redirect_to painel_author_path(@author), :notice => 'Author was successfully created.' }
         format.json { render :json => @author, :status => :created, :location => @author }
       else
         format.html { render :action => "new" }
@@ -61,7 +61,7 @@ class Painel::AuthorsController < ApplicationController
 
     respond_to do |format|
       if @author.update_attributes(params[:author])
-        format.html { redirect_to @author, :notice => 'Author was successfully updated.' }
+        format.html { redirect_to painel_author_path(@author), :notice => 'Author was successfully updated.' }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

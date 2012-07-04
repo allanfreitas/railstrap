@@ -33,7 +33,14 @@ module Railstrap
       return if options.no_controller
       #if !options.no_controller
         template "controller.rb", File.join('app/controllers', "#{@controller_file_path}_controller.rb")
-        route("resources :#{plural_resource_name}")
+
+        if @controller_class_nesting_depth == 1
+          route("namespace :#{@controller_class_nesting.downcase.underscore} do 
+    resources :#{plural_resource_name}
+  end")
+        else
+          route("resources :#{plural_resource_name}")  
+        end      
       #end
     end
     

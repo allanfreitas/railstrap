@@ -69,7 +69,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
     respond_to do |format|
       if @<%= tbl_nome %>.save
-        format.html { redirect_to @<%= tbl_nome %>, :notice => <%= "'#{tbl_nome.camelcase} was successfully created.'" %> }
+        format.html { redirect_to <%=namespace_path%><%=tbl_nome%>_path(@<%= tbl_nome %>), :notice => <%= "'#{tbl_nome.camelcase} was successfully created.'" %> }
         format.json { render :json => <%= "@#{tbl_nome}" %>, :status => :created, :location => <%= "@#{tbl_nome}" %> }
       else
         format.html { render :action => "new" }
@@ -85,7 +85,7 @@ class <%= controller_class_name %>Controller < ApplicationController
 
     respond_to do |format|
       if @<%= tbl_nome%>.update_attributes(params[:<%=tbl_nome%>])
-        format.html { redirect_to @<%= tbl_nome %>, :notice => <%= "'#{tbl_nome.camelcase} was successfully updated.'" %> }
+        format.html { redirect_to <%=namespace_path%><%=tbl_nome%>_path(@<%= tbl_nome %>), :notice => <%= "'#{tbl_nome.camelcase} was successfully updated.'" %> }
         format.json { head :ok }
       else
         format.html { render :action => "edit" }

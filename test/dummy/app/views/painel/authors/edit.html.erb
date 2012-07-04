@@ -5,7 +5,7 @@
   <%= tb_delete_button_to @author %>
 <% end %>
 
-<%= simple_form_for @author,:html => { :class => 'form-vertical' } do |f| %>
+<%= simple_form_for @author, :url => painel_authors_path(@author),:html => { :class => 'form-vertical', :id => 'author'  } do |f| %>
   
   <%= render :partial=>'form', :locals=>{:f=>f} %>
 
